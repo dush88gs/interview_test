@@ -20,7 +20,7 @@
 
     2. In the news archive page news titles needs to display with link to the relevant news page.
 
-    3. User should be able to share the news on the social networks. The sharing options only need to display in the single news page. (You may use share button service such as [AddToAny](http://www.addtoany.com/bittons/for/website))
+    3. User should be able to share the news on the social networks. The sharing options only need to display in the single news page. (You may use share button service such as [AddToAny](http://www.addtoany.com/buttons/for/website))
 
     4. Define custom taxonomy for News Categories (news-category).
 

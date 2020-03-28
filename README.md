@@ -1,7 +1,3 @@
-<style type="text/css">
-    ol ol { list-style-type: lower-alpha; }
-</style>
-
 ## Practical Test - WordPress Developer (3 Hours)
 
 ### Complete functionality and look and feel of the web page according to the provided sources and instructions below.
@@ -24,7 +20,7 @@
 
     2. In the news archive page news titles needs to display with link to the relevant news page.
 
-    3. User should be able to share the news on the social networks. The sharing options only need to display in the single news page. (You may use share button service such as http://www.addtoany.com/bittons/for/website)
+    3. User should be able to share the news on the social networks. The sharing options only need to display in the single news page. (You may use share button service such as [AddToAny](http://www.addtoany.com/bittons/for/website))
 
     4. Define custom taxonomy for News Categories (news-category).
 

@@ -1,24 +1,13 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interview_Test
- */
+/* Template Name: Home */
 
 get_header();
 ?>
 
-	<section class="common-section">
+	<section class="home-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
 
         <?php
         while ( have_posts() ) :
@@ -35,10 +24,12 @@ get_header();
         ?>
 
 		    </div>
+        <div class="col-md-4">
+          <?php get_sidebar(); ?>
+        </div>
       </div>
     </div>
   </section>
 
 <?php
-// get_sidebar();
 get_footer();

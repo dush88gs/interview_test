@@ -40,11 +40,14 @@ if ( ! function_exists( 'interview_test_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'post-thumbnails' );
+    
+    // Include custom navwalker
+    require_once('inc/bs4navwalker.php');
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'interview_test' ),
+			'main-menu' => esc_html__( 'Primary', 'interview_test' ),
 		) );
 
 		/*
@@ -131,6 +134,77 @@ function interview_test_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'interview_test_scripts' );
+
+/**
+ * News Custom post type
+ */
+function register_my_cpts_news() {
+
+	$labels = [
+		"name" => __( "News", "interview_test" ),
+		"singular_name" => __( "News", "interview_test" ),
+	];
+
+	$args = [
+		"label" => __( "News", "interview_test" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "news", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail" ],
+	];
+
+	register_post_type( "news", $args );
+}
+
+add_action( 'init', 'register_my_cpts_news' );
+
+/**
+ * Taxonomy: News Categories.
+ */
+function register_my_taxes_news_category() {
+
+	$labels = [
+		"name" => __( "News Categories", "interview_test" ),
+		"singular_name" => __( "News Category", "interview_test" ),
+	];
+
+	$args = [
+		"label" => __( "News Categories", "interview_test" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'news-category', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "news_category",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+		];
+	register_taxonomy( "news_category", [ "news" ], $args );
+}
+add_action( 'init', 'register_my_taxes_news_category' );
+
+
 
 /**
  * Implement the Custom Header feature.

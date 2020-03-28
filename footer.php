@@ -11,24 +11,13 @@
 
 ?>
 
-	</div><!-- #content -->
+	<footer>
+		
+	</footer>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'interview_test' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'interview_test' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'interview_test' ), 'interview_test', '<a href="https://dushanmaduranga.com">Dushan Maduranga</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/main.js"></script>
 
 <?php wp_footer(); ?>
 

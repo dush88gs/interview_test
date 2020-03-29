@@ -194,6 +194,11 @@ template {
 }
 /* end Normalize css */
 
+/* Start Common Styles */
+.common-section {
+  padding: 3rem 0;
+}
+/* End Common Styles */
 
 /* Start Home Page */
 .home-section {

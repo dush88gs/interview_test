@@ -10,15 +10,15 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section class="common-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'interview_test' ); ?></h1>
-				</header><!-- .page-header -->
+          <header class="page-header">
+            <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'interview_test' ); ?></h1>
+          </header><!-- .page-header -->
 
-				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'interview_test' ); ?></p>
 
 					<?php
@@ -50,11 +50,10 @@ get_header();
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </div>
+      </div>
+    </div>
+  </section>
 
 <?php
 get_footer();

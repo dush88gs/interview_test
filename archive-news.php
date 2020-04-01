@@ -1,9 +1,13 @@
 <?php
   get_header();
 
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
   $args = array(
     'post_type' => 'news',
-    'post_status' => 'publish'
+    'post_status' => 'publish',
+    'posts_per_page' => 2,
+    'paged' => $paged
   );
   $news_query = new WP_Query( $args );
 ?>
@@ -17,7 +21,11 @@
 
           <h3><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-        <?php endwhile; else : ?>
+        <?php endwhile; ?>
+
+        <?php bootstrap_pagination($news_query); ?>
+
+        <?php else : ?>
         <p>There are no News exist</p>
         <?php endif;
         wp_reset_postdata(); ?>

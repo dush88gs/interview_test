@@ -148,14 +148,14 @@ function register_my_cpts_news() {
 	$args = [
 		"label" => __( "News", "interview_test" ),
 		"labels" => $labels,
-		"description" => "",
+		"description" => "Custom post type for News",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -172,6 +172,8 @@ function register_my_cpts_news() {
 }
 
 add_action( 'init', 'register_my_cpts_news' );
+
+
 
 /**
  * Taxonomy: News Categories.
@@ -204,6 +206,10 @@ function register_my_taxes_news_category() {
 }
 add_action( 'init', 'register_my_taxes_news_category' );
 
+/**
+ * Bootstrap 4 Pagination
+ */
+include_once('inc/bs4pagination.php');
 
 
 /**

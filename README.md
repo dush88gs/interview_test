@@ -44,4 +44,3 @@
 8. Don't ignore and suppress errors. Make sure they don't happen in the first place.
 
 9. Ensure that when applying these coding standards that they are applied consistently.
-

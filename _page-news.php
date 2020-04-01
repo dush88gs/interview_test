@@ -1,11 +1,12 @@
 <?php
-/* Template Name: News */
 
   get_header();
 
   $args = array(
     'post_type' => 'news',
-    'post_status' => 'publish'
+    'post_status' => 'publish',
+    'posts_per_page' => 1,
+    'paged' => get_query_var('paged')
   );
   $news_query = new WP_Query( $args );
 ?>
@@ -19,7 +20,11 @@
 
           <h3><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-        <?php endwhile; else : ?>
+        <?php endwhile; ?>
+
+        <?php echo bootstrap_pagination($news_query); ?>
+        
+        <?php else : ?>
         <p>There are no News exist</p>
         <?php endif;
         wp_reset_postdata(); ?>

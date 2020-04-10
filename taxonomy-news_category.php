@@ -15,7 +15,11 @@
 
           <?php the_content(); ?>
 
-        <?php endwhile; else : ?>
+        <?php endwhile; ?>
+
+        <?php bootstrap_pagination(); ?>
+        
+        <?php else : ?>
         <p>There are no News exist in this Category</p>
         <?php endif;
         wp_reset_postdata(); ?>

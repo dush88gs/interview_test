@@ -212,6 +212,20 @@ add_action( 'init', 'register_my_taxes_news_category' );
 include_once('inc/bs4pagination.php');
 
 
+function custom_posts_per_page($query) {
+    // if (is_home()) {
+    //     $query->set('posts_per_page', 8);
+    // }
+    if (is_search()) {
+        $query->set('posts_per_page', -1);
+    }
+    if (is_archive()) {
+        $query->set('posts_per_page', 4);
+    }
+}     
+add_action('pre_get_posts', 'custom_posts_per_page');
+
+
 /**
  * Implement the Custom Header feature.
  */

@@ -1,15 +1,5 @@
 <?php
   get_header();
-
-  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-  $args = array(
-    'post_type' => 'news',
-    'post_status' => 'publish',
-    'posts_per_page' => 2,
-    'paged' => $paged
-  );
-  $news_query = new WP_Query( $args );
 ?>
 
 	<section class="home-section">
@@ -17,13 +7,17 @@
       <div class="row">
         <div class="col-md-8">
 
-        <?php if ( $news_query->have_posts() ) : while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <div id="post-<?php the_ID(); ?>" <?php post_class() ?>>
 
           <h3><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h3>
 
+        </div>
+
         <?php endwhile; ?>
 
-        <?php bootstrap_pagination($news_query); ?>
+        <?php bootstrap_pagination(); ?>
 
         <?php else : ?>
         <p>There are no News exist</p>

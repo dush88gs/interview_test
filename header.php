@@ -16,8 +16,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="<?php echo get_bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+	<!-- <link href="<?php //echo get_bloginfo('template_directory'); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php //echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet"> -->
 
 	<?php wp_head(); ?>
 </head>

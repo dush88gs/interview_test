@@ -15,9 +15,9 @@
 		
 	</footer>
 
-  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/main.js"></script>
+  <!-- <script type="text/javascript" src="<?php //echo get_bloginfo('template_directory'); ?>/assets/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="<?php //echo get_bloginfo('template_directory'); ?>/assets/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="<?php //echo get_bloginfo('template_directory'); ?>/assets/js/main.js"></script> -->
 
 <?php wp_footer(); ?>
 

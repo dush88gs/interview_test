@@ -15,14 +15,13 @@
 
         </div>
 
-        <?php endwhile; ?>
+        <?php endwhile; wp_reset_postdata(); ?>
 
         <?php bootstrap_pagination(); ?>
 
         <?php else : ?>
         <p>There are no News exist</p>
-        <?php endif;
-        wp_reset_postdata(); ?>
+        <?php endif; ?>
 
 		    </div>
         <div class="col-md-4">
